@@ -1,19 +1,19 @@
+'use strict';
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 var shopSchema = new Schema({
-    //shop_id:
-    //staff_id : integer,
+    staff_id : Number,
     name: String,
     password: String,
     address: String,
-    // phone:
-    // logo:
-    // createdAt:,
-    // deletedAt:
+    phone: Number,
+    logo: String,
+    createdAt:  Date,
+    deletedAt:  Date
 });
 
-var shop = mongoose.model('shopData', shopSchema);
+var shop = mongoose.model('shop', shopSchema);
 
 module.exports = shop;

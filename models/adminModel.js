@@ -1,17 +1,19 @@
-var mongoose = require('mongoose');
+'use strict';
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+// let url = require('mongoose-type-url');
 
-var Schema = mongoose.Schema;
-
-var adminSchema = new Schema({
-    //admin_id: integer,
+let adminSchema = new Schema({
     name: String,
     username: String,
     email: String,
     password: String,
     status : String,
-   // pic : String
+    pic : String,
+    createdAt:  Date,
+    deletedAt:  Date
 });
 
-var admin = mongoose.model('adminData', adminSchema);
+let admin = mongoose.model('admins', adminSchema);
 
 module.exports = admin;

@@ -1,19 +1,22 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+const endpoints = require('./routes');
+const mongoose = require('mongoose');
+const config = require('./config');
+// Set up port for server to listen on
+let port = process.env.PORT || 9000;
+
+/*express is using create a http server*/
 const app = express();
-app.use(bodyParser.json());
-const path = require('path');
 
-const db = require("./db");
+// connect to mongodb
+mongoose.connect(config.getDbConnctionString());
 
-db.connect((err) => {
-    if(err){
-        console.log('unable to connect to db');
-        process.exit(1);
-    }
-    else {
-        app.listen(3000, ()=>{
-            console.log('connected to database, app listening on port 3000')
-        });
-    }
-})
+// //routes
+endpoints(app);
+
+//Listing port
+// Fire up server
+// Print friendly message to console
+app.listen(port, () => {
+    console.log('app started at port 9000');
+});

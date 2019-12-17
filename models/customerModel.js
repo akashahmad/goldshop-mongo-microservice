@@ -1,17 +1,17 @@
-var mongoose = require('mongoose');
+'use strict';
+let mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+let Schema = mongoose.Schema;
 
-var customerSchema = new Schema({
-    //customer_id: integer,
+let customerSchema = new Schema({
     username: String,
-    //phone: integer,
+    phone: Number,
     email: String,
     addedBy: String,
-    createdAt: date ,
-    //deletedAt
+    createdAt:  Date,
+    deletedAt:  Date
 });
 
-var customer = mongoose.model('customerData', customerSchema);
+let customer = mongoose.model('customers', customerSchema);
 
 module.exports = customer;

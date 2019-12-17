@@ -1,17 +1,17 @@
+'use strict';
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
 var moneySchema = new Schema({
-    _id : integer,
-    bill_no: String,
+    bill_no: Number,
     amount_spent: String,
     amount_recieved: String,
-    //currency_type:
-    //  createdAt:,
-    //  deletedAt:
+    currency_type: String,
+    createdAt:  Date,
+    deletedAt:  Date
 });
 
-var money = mongoose.model('moneyData', moneySchema);
+var money = mongoose.model('money_details', moneySchema);
 
 module.exports = money;
