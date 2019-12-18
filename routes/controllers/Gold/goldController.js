@@ -28,15 +28,15 @@ const goldController = {
     put: async (req, res)=>{
         const response = {};
         try {
-            let {bill_no,gold_sold, gold_recieved, purity, currency_type, createdAt, deletedAt} = req.body;
+            let {bill_no,gold_sold, gold_recieved, purity, currency_type, created_at, deleted_at} = req.body;
             let payload = {
                 bill_no: bill_no,
                 gold_sold: gold_sold,
                 gold_recieved: gold_recieved,
                 purity: purity,
                 currency_type: currency_type,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             let {id} = req.params;
             gold.findByIdAndUpdate(id, payload,async (err) => {
@@ -61,15 +61,15 @@ const goldController = {
     post: async (req, res)=>{
         const response = {};
         try {
-            let {bill_no,gold_sold, gold_recieved, purity, currency_type, createdAt, deletedAt} = req.body;
+            let {bill_no,gold_sold, gold_recieved, purity, currency_type, created_at, deleted_at} = req.body;
             let payload = {
                 bill_no: bill_no,
                 gold_sold: gold_sold,
                 gold_recieved: gold_recieved,
                 purity: purity,
                 currency_type: currency_type,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             gold.create(payload,async (err, data) => {
                 if (err) {

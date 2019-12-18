@@ -30,7 +30,7 @@ exports = module.exports = function (app) {
 
     app.post('/api/gold', gold.post);
     app.delete('/api/gold/:id', gold.delete);
-    app.get('/api/all', gold.get);
+    app.get('/api/gold', gold.get);
     app.put('/api/gold/:id', gold.put);
     app.get('/api/gold/:id', gold.single);
 

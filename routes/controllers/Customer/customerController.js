@@ -28,14 +28,14 @@ const customerController = {
     put: async (req, res)=>{
         const response = {};
         try {
-            let {username, email,phone,addedBy,createdAt,deletedAt} = req.body;
+            let {user_name, email,phone,added_by,created_at,deleted_at} = req.body;
             let payload = {
-                username: username,
+                username: user_name,
                 email: email,
                 phone: phone,
-                addedBy: addedBy,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                addedBy: added_by,
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             let {id} = req.params;
             customer.findByIdAndUpdate(id, payload,async (err) => {
@@ -60,14 +60,14 @@ const customerController = {
     post: async (req, res)=>{
         const response = {};
         try {
-            let {username, email,phone,addedBy,createdAt,deletedAt} = req.body;
+            let {user_name, email,phone,added_by,created_at,deleted_at} = req.body;
             let payload = {
-                username: username,
+                username: user_name,
                 email: email,
                 phone: phone,
-                addedBy: addedBy,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                addedBy: added_by,
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             customer.create(payload,async (err, data) => {
                 if (err) {

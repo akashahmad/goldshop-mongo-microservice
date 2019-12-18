@@ -28,7 +28,7 @@ const shopController = {
     put: async (req, res)=>{
         const response = {};
         try {
-            let {staff_id, name, password, phone, address, logo, createdAt, deletedAt} = req.body;
+            let {staff_id, name, password, phone, address, logo, created_at, deleted_at} = req.body;
             let payload = {
                 staff_id : staff_id,
                 name: name,
@@ -36,8 +36,8 @@ const shopController = {
                 phone: phone,
                 address: address,
                 logo: logo,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             let {id} = req.params;
             shop.findByIdAndUpdate(id, payload,async (err) => {
@@ -62,11 +62,16 @@ const shopController = {
     post: async (req, res)=>{
         const response = {};
         try {
-            let {name,password,address} = req.body;
+            let {staff_id, name, password, phone, address, logo, created_at, deleted_at} = req.body;
             let payload = {
+                staff_id : staff_id,
                 name: name,
                 password: password,
-                address: address
+                phone: phone,
+                address: address,
+                logo: logo,
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             shop.create(payload,async (err, data) => {
                 if (err) {

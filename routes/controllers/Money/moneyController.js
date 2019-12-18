@@ -28,14 +28,14 @@ const moneyController = {
     put: async (req, res)=>{
         const response = {};
         try {
-            let {bill_no, amount_spent, amount_recieved, currency_type, createdAt, deletedAt} = req.body;
+            let {bill_no, amount_spent, amount_recieved, currency_type, created_at, deleted_at} = req.body;
             let payload = {
                 bill_no: bill_no,
                 amount_spent: amount_spent,
                 amount_recieved: amount_recieved,
                 currency_type: currency_type,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             let {id} = req.params;
             money.findByIdAndUpdate(id, payload,async (err) => {
@@ -60,14 +60,14 @@ const moneyController = {
     post: async (req, res)=>{
         const response = {};
         try {
-            let {bill_no, amount_spent, amount_recieved, currency_type, createdAt, deletedAt} = req.body;
+            let {bill_no, amount_spent, amount_recieved, currency_type, created_at, deleted_at} = req.body;
             let payload = {
                 bill_no: bill_no,
                 amount_spent: amount_spent,
                 amount_recieved: amount_recieved,
                 currency_type: currency_type,
-                createdAt: createdAt,
-                deletedAt: deletedAt
+                createdAt: created_at,
+                deletedAt: deleted_at
             };
             money.create(payload,async (err, data) => {
                 if (err) {
